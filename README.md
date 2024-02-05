@@ -4,8 +4,6 @@
 
 ![CyberDogDog](tools/docs/cyberdog_poster.jpg)
 
-> ***[中文](README.md)***
-
 ## Introduction
 
 This project contains the main ROS 2 packages of Xiaomi CyberDog®.
