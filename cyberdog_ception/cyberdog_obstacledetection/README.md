@@ -1,2 +1,2 @@
-# cyberdog_ObstacleDetection
-该模块创建了机器人感知系统中Ultrasonic Sensor的service和publisher。该模块同时支持两路sensor的信息感知，但目前机器人系统硬件仅适配了Head Ultrasonic Sensor。当机器人需要进行自动避障功能时，可通过上层决策层或其他模块启动该service和publisher，获取周围障碍物的距离信息。
+#cyberdog_ObstacleDetection
+This module creates the service and publisher of Ultrasonic Sensor in the robot perception system. This module supports information perception from two sensors at the same time, but currently the robot system hardware is only adapted to the Head Ultrasonic Sensor. When the robot needs to perform automatic obstacle avoidance function, the service and publisher can be started through the upper decision-making layer or other modules to obtain the distance information of surrounding obstacles.
