@@ -1,51 +1,51 @@
-# SceneDetection
+#SceneDetection
 
-该模块为机器人提供场景检测功能，通过定位芯片获取当前位置信息，同时通过卫星信号质量判断机器人当前处于室内或室外。
+This module provides scene detection function for the robot, obtains the current location information through the positioning chip, and determines whether the robot is currently indoors or outdoors through the satellite signal quality.
 
-通过SceneDetection server接受系统对本模块的控制命令，通过SceneDetection publisher向系统发布当前位置信息。
+Accept the system's control commands for this module through the SceneDetection server, and publish the current location information to the system through the SceneDetection publisher.
 
-## 主要功能
+## The main function
 
 ### SceneDetection server
 
-- 接收系统发送的控制命令，命令类型如下：
-  - 开启定位
-  - 关闭定位
+- Receive control commands sent by the system. The command types are as follows:
+   - Turn on positioning
+   - Turn off positioning
 
 
 ### SceneDetection publisher
 
-- 定期（1S）向系统发布机器人当前位置信息，包含以下内容
-	- 经度
-	- 纬度
-	- 场景判别结果
+- Regularly (1S) publishes the current location information of the robot to the system, including the following content
+- Longitude
+- Latitude
+- Scene discrimination results
 	
-- 过滤非必要的定位芯片上报信息，减少CPU使用率
+- Filter non-essential positioning chip reporting information to reduce CPU usage
 
-### 其他
+### other
 
-* 完成定位芯片初始化
-* 解析定位芯片上报的数据
+* Complete positioning chip initialization
+* Parse the data reported by the positioning chip
 
-## 编译
+## Compile
 
-使用了colcon编译系统
-*   colcon build --merge-install --install-base /opt/ros2/cyberdog --packages-up-to cyberdog_scene_detection
+Used colcon compilation system
+* colcon build --merge-install --install-base /opt/ros2/cyberdog --packages-up-to cyberdog_scene_detection
 
-## 文件
+## document
 
-*   ./src/
-    *   bream
-        *   定位芯片头文件
-    *   hal
-        *   定位芯片头文件
-    *   scene_detection.cpp
-        *   实现SceneDetection server与SceneDetection publisher
-    *   patch_downloader
-        *   定位芯片头文件
-*   lib_bream
-    *   定位芯片库
-*   ./CMakefile.txt
-    *   编译脚本
-*   ./package.xml
-    *   模块声明和依赖声明
+* ./src/
+     *bream
+         * Locate chip header file
+     *hal
+         * Locate chip header file
+     * scene_detection.cpp
+         * Implement SceneDetection server and SceneDetection publisher
+     * patch_downloader
+         * Locate chip header file
+* lib_bream
+     * Locate chip library
+* ./CMakefile.txt
+     * Compile script
+* ./package.xml
+     * Module declaration and dependency declaration
