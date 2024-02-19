@@ -117,17 +117,17 @@ namespace SceneDetection
 GpsPubNode::GpsPubNode()
 : cyberdog_utils::LifecycleNode( "GpsPubNode")
 {
-  RCLCPP_INFO(get_logger(), "Creating GpsPubNode.");
+  RCLCPP_INFO( get_logger(), "Creating GpsPubNode.");
 }
 
 GpsPubNode::~GpsPubNode()
 {
-  RCLCPP_INFO(get_logger(), "Destroying GpsPubNode");
+  RCLCPP_INFO( get_logger(), "Destroying GpsPubNode");
 }
 
 cyberdog_utils::CallbackReturn GpsPubNode::on_configure( const rclcpp_lifecycle::State &)
 {
-  RCLCPP_INFO(get_logger(), "Configuring");
+  RCLCPP_INFO( get_logger(), "Configuring");
   callback_group_ = this->create_callback_group( rclcpp::CallbackGroupType::Reentrant);
   publisher_ = this->create_publisher<motion_msgs::msg::Scene>(
     "SceneDetection",
